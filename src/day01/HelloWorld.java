@@ -1,0 +1,38 @@
+package day01;
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// 실행 메서드
+		// 주석 (코드 제외되는 공간) : 한줄주석
+		/* 여러줄
+		 * 주석
+		 * 
+		 * console : 출력공간
+		 * String : 문자열를 처리하는 클래스 => "문자열"
+		 *  
+		 *  */
+		
+		System.out.println("hello world ~~!!!!!"); // 출력방법
+		System.out.println("abcdef"); // java의 끝은 ; 마무리
+		
+		byte b = 30;
+		// 반드시 작은따옴표 'char' 를 사용하여 묶어줘야 함.
+		char ch = 'a'; 
+		
+		int aCount = 100;
+		int ACOUNT = 200; // 대문자로 시작하는 변수는 상수일때의 규칙 (전부대문자)
+		long lo = 12345678945L;  // 접미사 l/L
+		float f = 1.1f;   		// 접미사 f/F
+		double dou = 1.123456789;
+		
+		// 원래 클래스는 정의하는 방법이 다르지만, 
+		// String만은 예외로 자료형처럼 정의 가능
+		
+		String str = "Hello World";
+		
+		System.out.println(b);
+
+	}
+
+}
