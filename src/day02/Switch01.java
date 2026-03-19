@@ -35,15 +35,17 @@ public class Switch01 {
 		// num 값이 1이면 1칸전진, 2면 2칸전진, 3이면 3칸전진
 		// num의 값이 1, 2, 3 아닌 나머지는 다시입력하세요.
 		
+		System.out.println("break 없는 경우");
 		int num = 2;
 		switch(num) {
-		case 1: System.out.println("1칸전진"); break;
-		case 2: System.out.println("2칸전진"); break;
-		case 3: System.out.println("3칸전진"); break;
+		case 1: System.out.println("1칸전진");
+		case 2: System.out.println("2칸전진");
+		case 3: System.out.println("3칸전진");
 		default: System.out.println("다시 입력하세요.");
 		}
 		System.out.println("-------------");
 		
+		System.out.println("break 있는 경우");
 		switch(num) {
 		case 1: System.out.println(num+"칸전진"); break;
 		case 2: System.out.println(num+"칸전진"); break;
