@@ -1,5 +1,7 @@
 package day04;
 
+import java.util.Scanner;
+
 public class Exam03 {
 
 	public static void main(String[] args) {
@@ -11,6 +13,61 @@ public class Exam03 {
 		 * menu 3 => 2*3=6
 		 * menu 4 => 2/0= => num2를 다시 입력해주세요.
 		 * */
+		Scanner scan = new Scanner(System.in);
+		
+		int menu = 0;
+		do {
+			System.out.println("---menu---");
+			System.out.println("1.+ | 2.- | 3.* | 4./ | 5.% | 6.종료");
+			System.out.println("menu>");
+			menu = scan.nextInt();
+			
+			if(menu == 6) {
+				System.out.println("종료합니다.");
+				break;
+			}else if(menu <=0 || menu > 6){
+				System.out.println("잘못된 메뉴!!");
+			}else {
+			
+				
+				System.out.println("두 숫자를 입력해주세요 (2 3)>");
+				int num1 = scan.nextInt();
+				int num2 = scan.nextInt();
+				
+				while(num2 == 0 && (menu == 4 || menu == 5)) {
+					System.out.println("피연산자가 0입니다. ");
+					System.out.println("num2를 다시 입력해주세요.");
+					num2 = scan.nextInt();
+				}
+				
+				switch(menu) {
+				case 1: System.out.println(num1+"+"+num2+"="+(num1+num2)); break;
+				case 2: System.out.println(num1+"-"+num2+"="+(num1-num2)); break;
+				case 3: System.out.println(num1+"*"+num2+"="+(num1*num2)); break;
+				case 4: System.out.println(num1+"/"+num2+"="+(num1/num2)); break;
+				case 5: System.out.println(num1+"%"+num2+"="+(num1%num2)); break;
+				case 6:  break;
+				default: break;
+				}
+			}
+			
+		}while(menu != 6);
+		
+		System.out.println("프로그램 종료");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		scan.close();
 
 	}
 
