@@ -46,6 +46,7 @@ public class Method05 {
 		int num1 = 16;
 		int num2 = 20;
 		
+		
 		Method05 m5 = new Method05();
 		int gcd = m5.gcd(num1, num2); // 최대공약수 리턴
 		System.out.println(gcd);

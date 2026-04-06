@@ -55,6 +55,8 @@ public class Student {
 		this.branch = branch;
 	}
 	
+	
+	
 	// 출력메서드
 	public void printInfo() {
 		// 학생의 기본정보만 출력
@@ -101,6 +103,16 @@ public class Student {
 	
 	
 	
+
+
+
+	public int getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 
 	// getter/setter
 	public String getName() {

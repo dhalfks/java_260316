@@ -30,7 +30,7 @@ public class StudentMain {
 		System.out.println("전화번호>");
 		String phone = scan.next();
 		
-		Student s = new Student(name, phone);
+		Student s = new Student(name, phone); // 학생 1명의 객체
 		
 		System.out.println("--지점선택--");
 		int gIndex = 0;
@@ -73,13 +73,12 @@ public class StudentMain {
 		
 		std[3] = new Student("choi", "010-1111-5555", "수원시", "010203", "종로");
 		std[3].insertCourse(subjectName[0], subjectDate[0]);
-		std[3].insertCourse(subjectName[2], subjectDate[2]);
+		std[3].insertCourse(subjectName[1], subjectDate[1]);
 		std[3].insertCourse(subjectName[3], subjectDate[3]);
 		
 		std[4] = new Student("park", "010-1111-3333", "서울시", "010203", "강남");
-		std[3].insertCourse(subjectName[0], subjectDate[0]);
 		std[3].insertCourse(subjectName[2], subjectDate[2]);
-		std[3].insertCourse(subjectName[2], subjectDate[2]);
+
 
 		for(int i=0; i<std.length; i++) {
 			std[i].printInfo();
@@ -88,10 +87,54 @@ public class StudentMain {
 			System.out.println("------------------");
 		}
 		
+		System.out.println("-------강남지점 명단--------");
+		// 검색
+		String searchBranch = "강남";
+		// 강남지점 학생 명단 출력
+		for(int i=0; i<std.length; i++) {
+			if(std[i].getBranch().equals(searchBranch)) {
+				std[i].printInfo();
+				std[i].printCompany();
+			}
+		}
+		
+		System.out.println("-------웹개발국기 명단--------");
+		String searchCourse = "웹개발국기";
+		// 웹개발국기 과정을 듣는 학생 명단 출력
+		
+		int cnt=0;
+		while(cnt< std.length) {
+			// 각자 수강한 과목의 개수만큼 for문 
+			for(int i=0; i<std[cnt].getCnt(); i++) {
+				if(std[cnt].getCourse()[i].equals(searchCourse)) {
+					std[cnt].printInfo();
+					std[cnt].printCompany();
+					std[cnt].printCourse();
+				}
+			}
+			cnt++;
+		}
+		
+		
+		// 학생 이름을 입력받아 그 학생의 정보를 출력
+		// 등록되어 있지 않은 학생이라면... 없는정보입니다. 출력
+		System.out.println("학생명>");
+		int count=0;
+		String searchName = scan.next();
+		for(int i=0; i<std.length; i++) {
+			if(std[i].getName().equals(searchName)) {
+				std[i].printInfo();
+				std[i].printCompany();
+				std[i].printCourse();
+				count++;
+			}
+		}
+		
+		if(count==0) {
+			System.out.println("없는 학생입니다.");
+		}
 		
 		scan.close();
-		
-
 
 	}
 
